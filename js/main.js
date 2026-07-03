@@ -15,10 +15,13 @@
     if (themeToggle) {
       themeToggle.textContent = theme === 'dark' ? 'LIGHT' : 'DARK';
     }
+    try { localStorage.setItem('theme', theme); } catch (e) { /* private browsing */ }
   }
 
+  var stored = null;
+  try { stored = localStorage.getItem('theme'); } catch (e) { /* private browsing */ }
   var systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-  var currentTheme = systemPrefersLight ? 'light' : 'dark';
+  var currentTheme = stored || (systemPrefersLight ? 'light' : 'dark');
   applyTheme(currentTheme);
 
   window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', function (e) {
@@ -45,8 +48,8 @@
 
   if (menuToggle) {
     menuToggle.addEventListener('click', function () {
-      if (mobileMenu) mobileMenu.classList.add('open');
-      if (scrim) scrim.classList.add('open');
+      if (mobileMenu) mobileMenu.classList.toggle('open');
+      if (scrim) scrim.classList.toggle('open');
     });
   }
   if (scrim) scrim.addEventListener('click', closeMenu);
@@ -67,7 +70,10 @@
       h = canvas.height = canvas.offsetHeight * devicePixelRatio;
     }
     resize();
-    window.addEventListener('resize', resize);
+    window.addEventListener('resize', function () {
+      resize();
+      if (prefersReduced) drawStatic();
+    });
 
     function noise(x, y, seed) {
       return Math.sin(x * 0.006 + seed) * 0.5 +
@@ -102,10 +108,8 @@
       requestAnimationFrame(drawContours);
     }
 
-    var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (!prefersReduced) {
-      requestAnimationFrame(drawContours);
-    } else {
+    function drawStatic() {
+      ctx.clearRect(0, 0, w, h);
       var colors = contourColors();
       var lines = 14;
       for (var i = 0; i < lines; i++) {
@@ -118,6 +122,13 @@
         }
         ctx.stroke();
       }
+    }
+
+    var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!prefersReduced) {
+      requestAnimationFrame(drawContours);
+    } else {
+      drawStatic();
     }
   }
 
