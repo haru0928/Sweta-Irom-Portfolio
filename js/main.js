@@ -132,6 +132,66 @@
     }
   }
 
+  /* --- Gallery Filters -------------------------------------- */
+  var filterBar = document.getElementById('galleryFilters');
+  var galleryItems = document.querySelectorAll('#galleryGrid .gallery-item');
+  if (filterBar && galleryItems.length) {
+    filterBar.addEventListener('click', function (e) {
+      var btn = e.target.closest('.gallery-filter');
+      if (!btn) return;
+      filterBar.querySelectorAll('.gallery-filter').forEach(function (b) {
+        b.classList.remove('active');
+      });
+      btn.classList.add('active');
+      var filter = btn.getAttribute('data-filter');
+      galleryItems.forEach(function (item) {
+        var show = filter === 'all' || item.getAttribute('data-type') === filter;
+        item.classList.toggle('is-hidden', !show);
+      });
+    });
+  }
+
+  /* --- Lightbox --------------------------------------------- */
+  var lightbox = document.getElementById('lightbox');
+  var lightboxContent = document.getElementById('lightboxContent');
+  var lightboxClose = document.getElementById('lightboxClose');
+
+  function closeLightbox() {
+    if (!lightbox) return;
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    if (lightboxContent) lightboxContent.innerHTML = '';
+  }
+
+  if (lightbox && lightboxContent && galleryItems.length) {
+    galleryItems.forEach(function (item) {
+      item.addEventListener('click', function () {
+        if (item.classList.contains('is-placeholder')) return;
+        var videoSrc = item.getAttribute('data-video');
+        var img = item.querySelector('img');
+        if (videoSrc) {
+          lightboxContent.innerHTML =
+            '<video src="' + videoSrc + '" controls autoplay playsinline></video>';
+        } else if (img) {
+          lightboxContent.innerHTML =
+            '<img src="' + img.getAttribute('src') + '" alt="' + (img.getAttribute('alt') || '') + '">';
+        } else {
+          return;
+        }
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  }
+
   /* --- Scroll Reveal ---------------------------------------- */
   var revealEls = document.querySelectorAll('.reveal');
   if (revealEls.length) {
