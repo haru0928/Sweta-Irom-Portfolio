@@ -134,7 +134,8 @@
 
   /* --- Gallery Filters -------------------------------------- */
   var filterBar = document.getElementById('galleryFilters');
-  var galleryItems = document.querySelectorAll('#galleryGrid .gallery-item');
+  var galleryItems = document.querySelectorAll('.gallery-item');
+  var projectBlocks = document.querySelectorAll('.project-block');
   if (filterBar && galleryItems.length) {
     filterBar.addEventListener('click', function (e) {
       var btn = e.target.closest('.gallery-filter');
@@ -147,6 +148,10 @@
       galleryItems.forEach(function (item) {
         var show = filter === 'all' || item.getAttribute('data-type') === filter;
         item.classList.toggle('is-hidden', !show);
+      });
+      projectBlocks.forEach(function (block) {
+        var visible = block.querySelectorAll('.gallery-item:not(.is-hidden)').length;
+        block.classList.toggle('is-hidden', visible === 0);
       });
     });
   }
