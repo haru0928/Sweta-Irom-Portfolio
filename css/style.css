@@ -893,3 +893,186 @@ footer.contact {
   position: relative;
   z-index: 2;
 }
+
+/* ==================== GALLERY ==================== */
+.gallery-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.gallery-filter {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--stone);
+  cursor: pointer;
+  transition: border-color 0.3s ease, color 0.3s ease, background 0.3s ease;
+}
+
+.gallery-filter:hover {
+  border-color: var(--rust);
+  color: var(--rust);
+}
+
+.gallery-filter.active {
+  background: var(--rust);
+  border-color: var(--rust);
+  color: var(--ink);
+}
+
+.gallery-grid {
+  columns: 1;
+  column-gap: 16px;
+  margin-top: 32px;
+}
+
+@media (min-width: 620px) {
+  .gallery-grid { columns: 2; }
+}
+
+@media (min-width: 980px) {
+  .gallery-grid { columns: 3; }
+}
+
+.gallery-item {
+  position: relative;
+  margin: 0 0 16px;
+  break-inside: avoid;
+  overflow: hidden;
+  background: var(--ink);
+  border: 1px solid var(--line);
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item.is-hidden { display: none; }
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.gallery-item:hover { transform: translateY(-3px); }
+
+/* Placeholder tiles show a textured block until real media is added */
+.gallery-item.is-placeholder {
+  aspect-ratio: 4 / 3;
+}
+
+.gallery-item .work-texture {
+  position: absolute;
+  inset: 0;
+  opacity: 0.18;
+}
+
+.gallery-item figcaption {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--stone);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.28), transparent);
+}
+
+.gallery-item.is-placeholder figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.75;
+}
+
+.gallery-tag {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--rust);
+  border: 1px solid var(--rust);
+  padding: 2px 7px;
+}
+
+.gallery-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  width: 56px;
+  height: 56px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: var(--rust);
+  transition: transform 0.3s ease;
+}
+
+.gallery-play::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+  border-style: solid;
+  border-width: 10px 0 10px 17px;
+  border-color: transparent transparent transparent var(--ink);
+}
+
+.gallery-item:hover .gallery-play { transform: translate(-50%, -50%) scale(1.1); }
+
+.gallery-note {
+  margin-top: 28px;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--stone);
+  opacity: 0.7;
+}
+
+.gallery-note a { color: var(--rust); }
+
+/* ==================== LIGHTBOX ==================== */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.lightbox.open { display: flex; }
+
+.lightbox-content {
+  max-width: 92vw;
+  max-height: 88vh;
+}
+
+.lightbox-content img,
+.lightbox-content video {
+  display: block;
+  max-width: 92vw;
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 26px;
+  background: transparent;
+  border: none;
+  color: #E9E2D2;
+  font-size: 40px;
+  line-height: 1;
+  cursor: pointer;
+}
