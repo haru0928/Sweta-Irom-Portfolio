@@ -50,7 +50,7 @@
     <div class="section-head reveal">
       <div>
         <div class="section-label">Gallery</div>
-        <h2 class="section-title">Photos &amp; videos</h2>
+        <h2 class="section-title">Selected work</h2>
       </div>
       <div class="gallery-filters" id="galleryFilters">
         <button class="gallery-filter active" data-filter="all">All</button>
@@ -60,62 +60,181 @@
       </div>
     </div>
 
-    <!--
-      HOW TO ADD REAL MEDIA
-      ---------------------
-      Drop image/video files into  images/gallery/  then replace a tile below.
-
-      PHOTO tile:
-        <figure class="gallery-item reveal" data-type="render">
-          <img src="images/gallery/exterior-01.jpg" alt="Exterior render" loading="lazy">
-          <figcaption><span class="gallery-tag">RENDER</span> Exterior — Residence, Imphal</figcaption>
+    <!-- ===== PROJECT: Dr. Sheityajit Residence ===== -->
+    <div class="project-block reveal" data-project="residence">
+      <div class="project-head">
+        <h3 class="project-title">Dr. Sheityajit Residence</h3>
+        <div class="project-meta">Private Residence &middot; Exterior &amp; Interior Visualization</div>
+      </div>
+      <div class="gallery-grid">
+        <figure class="gallery-item" data-type="render">
+          <img src="images/gallery/residence-exterior-01.jpg" alt="Dr. Sheityajit Residence — street view" loading="lazy">
+          <figcaption><span class="gallery-tag">RENDER</span> Street view</figcaption>
         </figure>
+        <figure class="gallery-item" data-type="render">
+          <img src="images/gallery/residence-exterior-02.jpg" alt="Dr. Sheityajit Residence — corner elevation" loading="lazy">
+          <figcaption><span class="gallery-tag">RENDER</span> Corner elevation</figcaption>
+        </figure>
+        <figure class="gallery-item" data-type="render">
+          <img src="images/gallery/residence-exterior-03.jpg" alt="Dr. Sheityajit Residence — front elevation" loading="lazy">
+          <figcaption><span class="gallery-tag">RENDER</span> Front elevation</figcaption>
+        </figure>
+        <figure class="gallery-item" data-type="render">
+          <img src="images/gallery/residence-exterior-04.jpg" alt="Dr. Sheityajit Residence — aerial view" loading="lazy">
+          <figcaption><span class="gallery-tag">RENDER</span> Aerial view</figcaption>
+        </figure>
+        <figure class="gallery-item" data-type="render">
+          <img src="images/gallery/residence-exterior-05.jpg" alt="Dr. Sheityajit Residence — approach view" loading="lazy">
+          <figcaption><span class="gallery-tag">RENDER</span> Approach view</figcaption>
+        </figure>
+        <figure class="gallery-item" data-type="render">
+          <img src="images/gallery/residence-massing.jpg" alt="Dr. Sheityajit Residence — massing study" loading="lazy">
+          <figcaption><span class="gallery-tag">RENDER</span> Massing study</figcaption>
+        </figure>
+        <figure class="gallery-item" data-type="render">
+          <img src="images/gallery/residence-interior-living.jpg" alt="Dr. Sheityajit Residence — living room" loading="lazy">
+          <figcaption><span class="gallery-tag">INTERIOR</span> Living room</figcaption>
+        </figure>
+        <figure class="gallery-item" data-type="render">
+          <img src="images/gallery/residence-3d-floorplan.jpg" alt="Dr. Sheityajit Residence — 3D floor plan" loading="lazy">
+          <figcaption><span class="gallery-tag">RENDER</span> 3D floor plan</figcaption>
+        </figure>
+        <figure class="gallery-item" data-type="drawing">
+          <img src="images/gallery/residence-plans.jpg" alt="Dr. Sheityajit Residence — floor plans" loading="lazy">
+          <figcaption><span class="gallery-tag">DRAWING</span> Floor plans</figcaption>
+        </figure>
+      </div>
+    </div>
 
-      VIDEO tile (poster shows before play; opens in lightbox):
-        <figure class="gallery-item reveal" data-type="video" data-video="images/gallery/walkthrough-01.mp4">
-          <img src="images/gallery/walkthrough-01-poster.jpg" alt="Walkthrough" loading="lazy">
+    <!-- ===== PROJECT: Sally's Farm House ===== -->
+    <div class="project-block reveal" data-project="farmhouse">
+      <div class="project-head">
+        <h3 class="project-title">Sally's Farm House</h3>
+        <div class="project-meta">Farmhouse &middot; Visualization &amp; Walkthrough</div>
+      </div>
+      <div class="gallery-grid">
+        <figure class="gallery-item" data-type="video" data-video="images/gallery/farmhouse-walkthrough.mp4">
+          <img src="images/gallery/farmhouse-poster.jpg" alt="Sally's Farm House — walkthrough" loading="lazy">
           <span class="gallery-play" aria-hidden="true"></span>
-          <figcaption><span class="gallery-tag">VIDEO</span> Walkthrough — Interior</figcaption>
+          <figcaption><span class="gallery-tag">VIDEO</span> Walkthrough</figcaption>
         </figure>
+        <figure class="gallery-item" data-type="render">
+          <img src="images/gallery/farmhouse-pool.jpg" alt="Sally's Farm House — pool &amp; courtyard" loading="lazy">
+          <figcaption><span class="gallery-tag">RENDER</span> Pool &amp; courtyard</figcaption>
+        </figure>
+        <figure class="gallery-item" data-type="render">
+          <img src="images/gallery/farmhouse-exterior.jpg" alt="Sally's Farm House — rear elevation" loading="lazy">
+          <figcaption><span class="gallery-tag">RENDER</span> Rear elevation</figcaption>
+        </figure>
+        <figure class="gallery-item" data-type="render">
+          <img src="images/gallery/farmhouse-aerial.jpg" alt="Sally's Farm House — aerial view" loading="lazy">
+          <figcaption><span class="gallery-tag">RENDER</span> Aerial view</figcaption>
+        </figure>
+        <figure class="gallery-item" data-type="drawing">
+          <img src="images/gallery/farmhouse-site-plan.jpg" alt="Sally's Farm House — site plan" loading="lazy">
+          <figcaption><span class="gallery-tag">DRAWING</span> Site plan</figcaption>
+        </figure>
+      </div>
+    </div>
 
-      The placeholder tiles below use the site's textures so the layout is
-      visible until real files are added.
-    -->
-    <div class="gallery-grid reveal" id="galleryGrid">
-      <figure class="gallery-item is-placeholder" data-type="render">
-        <div class="work-texture tex-lat"></div>
-        <figcaption><span class="gallery-tag">RENDER</span> Exterior — add photo</figcaption>
-      </figure>
-      <figure class="gallery-item is-placeholder" data-type="video" data-video="">
-        <div class="work-texture tex-stone"></div>
-        <span class="gallery-play" aria-hidden="true"></span>
-        <figcaption><span class="gallery-tag">VIDEO</span> Walkthrough — add video</figcaption>
-      </figure>
-      <figure class="gallery-item is-placeholder" data-type="render">
-        <div class="work-texture tex-bamboo"></div>
-        <figcaption><span class="gallery-tag">RENDER</span> Interior — add photo</figcaption>
-      </figure>
-      <figure class="gallery-item is-placeholder" data-type="drawing">
-        <div class="work-texture tex-thatch"></div>
-        <figcaption><span class="gallery-tag">DRAWING</span> Plan — add drawing</figcaption>
-      </figure>
-      <figure class="gallery-item is-placeholder" data-type="render">
-        <div class="work-texture tex-stone"></div>
-        <figcaption><span class="gallery-tag">RENDER</span> Exterior — add photo</figcaption>
-      </figure>
-      <figure class="gallery-item is-placeholder" data-type="drawing">
-        <div class="work-texture tex-lat"></div>
-        <figcaption><span class="gallery-tag">DRAWING</span> Section — add drawing</figcaption>
-      </figure>
-      <figure class="gallery-item is-placeholder" data-type="video" data-video="">
-        <div class="work-texture tex-bamboo"></div>
-        <span class="gallery-play" aria-hidden="true"></span>
-        <figcaption><span class="gallery-tag">VIDEO</span> Flythrough — add video</figcaption>
-      </figure>
-      <figure class="gallery-item is-placeholder" data-type="render">
-        <div class="work-texture tex-thatch"></div>
-        <figcaption><span class="gallery-tag">RENDER</span> Interior — add photo</figcaption>
-      </figure>
+    <!-- ===== PROJECT: Luxury Villa ===== -->
+    <div class="project-block reveal" data-project="villa">
+      <div class="project-head">
+        <h3 class="project-title">Luxury Villa</h3>
+        <div class="project-meta">Residence &middot; Interior &amp; Exterior Visualization</div>
+      </div>
+      <div class="gallery-grid">
+        <figure class="gallery-item" data-type="render">
+          <img src="images/gallery/villa-exterior-01.jpg" alt="Luxury Villa — exterior" loading="lazy">
+          <figcaption><span class="gallery-tag">RENDER</span> Exterior</figcaption>
+        </figure>
+        <figure class="gallery-item" data-type="render">
+          <img src="images/gallery/villa-bedroom-01.jpg" alt="Luxury Villa — master bedroom" loading="lazy">
+          <figcaption><span class="gallery-tag">INTERIOR</span> Master bedroom</figcaption>
+        </figure>
+        <figure class="gallery-item" data-type="render">
+          <img src="images/gallery/villa-bathroom-01.jpg" alt="Luxury Villa — master bathroom" loading="lazy">
+          <figcaption><span class="gallery-tag">INTERIOR</span> Master bathroom</figcaption>
+        </figure>
+        <figure class="gallery-item" data-type="render">
+          <img src="images/gallery/villa-closet-01.jpg" alt="Luxury Villa — walk-in closet" loading="lazy">
+          <figcaption><span class="gallery-tag">INTERIOR</span> Walk-in closet</figcaption>
+        </figure>
+        <figure class="gallery-item" data-type="render">
+          <img src="images/gallery/villa-closet-02.jpg" alt="Luxury Villa — dressing room" loading="lazy">
+          <figcaption><span class="gallery-tag">INTERIOR</span> Dressing room</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <!-- ===== SECTION: Interior Visualization (general) ===== -->
+    <div class="project-block reveal" data-project="interiors">
+      <div class="project-head">
+        <h3 class="project-title">Interior Visualization</h3>
+        <div class="project-meta">Selected Interiors &middot; 2D &amp; 3D</div>
+      </div>
+      <div class="gallery-grid">
+        <figure class="gallery-item" data-type="render">
+          <img src="images/gallery/res-int-living-01.jpg" alt="Interior — living room seating" loading="lazy">
+          <figcaption><span class="gallery-tag">INTERIOR</span> Living room</figcaption>
+        </figure>
+        <figure class="gallery-item" data-type="render">
+          <img src="images/gallery/res-int-living-02.jpg" alt="Interior — lounge seating" loading="lazy">
+          <figcaption><span class="gallery-tag">INTERIOR</span> Lounge</figcaption>
+        </figure>
+        <figure class="gallery-item" data-type="render">
+          <img src="images/gallery/res-int-tv-01.jpg" alt="Interior — TV unit" loading="lazy">
+          <figcaption><span class="gallery-tag">INTERIOR</span> TV unit</figcaption>
+        </figure>
+        <figure class="gallery-item" data-type="render">
+          <img src="images/gallery/res-int-dining-01.jpg" alt="Interior — dining &amp; kitchen" loading="lazy">
+          <figcaption><span class="gallery-tag">INTERIOR</span> Dining &amp; kitchen</figcaption>
+        </figure>
+        <figure class="gallery-item" data-type="render">
+          <img src="images/gallery/res-int-dining-02.jpg" alt="Interior — dining, brick wall" loading="lazy">
+          <figcaption><span class="gallery-tag">INTERIOR</span> Dining</figcaption>
+        </figure>
+        <figure class="gallery-item" data-type="render">
+          <img src="images/gallery/res-int-dining-03.jpg" alt="Interior — dining &amp; staircase" loading="lazy">
+          <figcaption><span class="gallery-tag">INTERIOR</span> Dining &amp; stair</figcaption>
+        </figure>
+        <figure class="gallery-item" data-type="render">
+          <img src="images/gallery/res-int-kitchen-01.jpg" alt="Interior — kitchen &amp; staircase" loading="lazy">
+          <figcaption><span class="gallery-tag">INTERIOR</span> Kitchen &amp; stair</figcaption>
+        </figure>
+        <figure class="gallery-item" data-type="render">
+          <img src="images/gallery/res-int-kitchen-02.jpg" alt="Interior — island kitchen" loading="lazy">
+          <figcaption><span class="gallery-tag">INTERIOR</span> Island kitchen</figcaption>
+        </figure>
+        <figure class="gallery-item" data-type="render">
+          <img src="images/gallery/res-int-kitchen-03.jpg" alt="Interior — classic kitchen" loading="lazy">
+          <figcaption><span class="gallery-tag">INTERIOR</span> Kitchen</figcaption>
+        </figure>
+        <figure class="gallery-item" data-type="render">
+          <img src="images/gallery/res-int-kitchen-04.jpg" alt="Interior — modern kitchen" loading="lazy">
+          <figcaption><span class="gallery-tag">INTERIOR</span> Kitchen</figcaption>
+        </figure>
+        <figure class="gallery-item" data-type="render">
+          <img src="images/gallery/res-int-kitchen-05.jpg" alt="Interior — utility kitchen" loading="lazy">
+          <figcaption><span class="gallery-tag">INTERIOR</span> Kitchen</figcaption>
+        </figure>
+        <figure class="gallery-item" data-type="render">
+          <img src="images/gallery/res-int-kitchen-06.jpg" alt="Interior — open kitchen" loading="lazy">
+          <figcaption><span class="gallery-tag">INTERIOR</span> Open kitchen</figcaption>
+        </figure>
+        <figure class="gallery-item" data-type="render">
+          <img src="images/gallery/res-int-bedroom-01.jpg" alt="Interior — bedroom" loading="lazy">
+          <figcaption><span class="gallery-tag">INTERIOR</span> Bedroom</figcaption>
+        </figure>
+        <figure class="gallery-item" data-type="render">
+          <img src="images/gallery/res-int-bedroom-02.jpg" alt="Interior — bedroom with wardrobe" loading="lazy">
+          <figcaption><span class="gallery-tag">INTERIOR</span> Bedroom</figcaption>
+        </figure>
+        <figure class="gallery-item" data-type="render">
+          <img src="images/gallery/res-int-bedroom-03.jpg" alt="Interior — guest bedroom" loading="lazy">
+          <figcaption><span class="gallery-tag">INTERIOR</span> Bedroom</figcaption>
+        </figure>
+      </div>
     </div>
 
     <p class="gallery-note reveal">More work available on request — <a href="about.html#contact">get in touch</a>.</p>

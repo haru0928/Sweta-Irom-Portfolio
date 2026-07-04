@@ -926,10 +926,39 @@ footer.contact {
   color: var(--ink);
 }
 
+.project-block {
+  margin-top: 48px;
+}
+
+.project-block.is-hidden { display: none; }
+
+.project-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.project-title {
+  font-family: var(--serif);
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 400;
+  color: var(--stone);
+}
+
+.project-meta {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--rust);
+}
+
 .gallery-grid {
   columns: 1;
   column-gap: 16px;
-  margin-top: 32px;
+  margin-top: 20px;
 }
 
 @media (min-width: 620px) {
