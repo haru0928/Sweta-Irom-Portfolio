@@ -46,6 +46,12 @@ body {
   transition: background 0.4s ease, color 0.4s ease;
 }
 
+/* Home page: subtle grey lift over the near-black base (component
+   surfaces still use --ink for depth). */
+body.home {
+  background: #201F22;
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.001ms !important;
