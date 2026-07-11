@@ -198,7 +198,7 @@
   }
 
   /* --- Scroll Reveal ---------------------------------------- */
-  var revealEls = document.querySelectorAll('.reveal');
+  var revealEls = document.querySelectorAll('.reveal, .mask-reveal');
   if (revealEls.length) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -209,5 +209,39 @@
       });
     }, { threshold: 0.15 });
     revealEls.forEach(function (el) { io.observe(el); });
+  }
+
+  /* --- Page-load intro (hero name + hero image mask) -------- */
+  window.addEventListener('load', function () {
+    document.body.classList.add('loaded');
+  });
+  // Fallback in case 'load' already fired
+  if (document.readyState === 'complete') {
+    document.body.classList.add('loaded');
+  }
+
+  /* --- Parallax on scroll ----------------------------------- */
+  var parallaxEls = document.querySelectorAll('[data-parallax]');
+  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (parallaxEls.length && !prefersReducedMotion) {
+    var ticking = false;
+    function updateParallax() {
+      var vh = window.innerHeight;
+      parallaxEls.forEach(function (el) {
+        var rect = el.getBoundingClientRect();
+        if (rect.bottom < 0 || rect.top > vh) return;
+        var speed = parseFloat(el.getAttribute('data-parallax')) || 0.1;
+        var offset = (rect.top + rect.height / 2 - vh / 2) * -speed;
+        el.style.transform = 'translate3d(0,' + offset.toFixed(1) + 'px,0)';
+      });
+      ticking = false;
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        window.requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
+    }, { passive: true });
+    updateParallax();
   }
 })();

@@ -34,26 +34,45 @@
 </nav>
 
 <!-- ==================== HERO ==================== -->
-<section class="hero">
+<section class="hero hero--home">
   <canvas id="contour"></canvas>
   <div class="blob b1"></div>
   <div class="blob b2"></div>
-  <div class="blob b3"></div>
-  <div class="wrap hero-content">
-    <div class="eyebrow">Imphal Valley &middot; Manipur, India</div>
-    <h1 class="name">Irom<br><em>Sweta</em></h1>
-    <p class="hero-sub">Visualization architect at Form &amp; Space Architects, Imphal — specializing in exterior and interior 2D and 3D visualization, bringing CAD precision and photoreal renders to collaborative studio work.</p>
-    <div class="hero-meta">
-      <div>Based in<span>Imphal, Manipur</span></div>
-      <div>Currently<span>Form &amp; Space Architects</span></div>
-      <div>Specialization<span>Exterior &amp; Interior 2D &amp; 3D Visualization</span></div>
+  <div class="wrap hero-grid">
+    <div class="hero-content">
+      <div class="eyebrow reveal">Imphal Valley &middot; Manipur, India</div>
+      <h1 class="name hero-name">
+        <span class="line"><span class="line-in">Irom</span></span>
+        <span class="line"><em class="line-in">Sweta</em></span>
+      </h1>
+      <p class="hero-sub reveal">Visualization architect at Form &amp; Space Architects, Imphal — specializing in exterior and interior 2D and 3D visualization, bringing CAD precision and photoreal renders to collaborative studio work.</p>
+      <div class="hero-meta reveal">
+        <div>Based in<span>Imphal, Manipur</span></div>
+        <div>Currently<span>Form &amp; Space Architects</span></div>
+        <div>Specialization<span>Exterior &amp; Interior 2D &amp; 3D Visualization</span></div>
+      </div>
+      <div class="cta-row reveal">
+        <a href="works.html" class="btn btn-primary">View Works <span class="arrow">&rarr;</span></a>
+        <a href="about.html#contact" class="btn">Get in Touch</a>
+      </div>
     </div>
-    <div class="cta-row">
-      <a href="works.html" class="btn btn-primary">View Works <span class="arrow">&rarr;</span></a>
-      <a href="about.html#contact" class="btn">Get in Touch</a>
-    </div>
+    <figure class="hero-figure">
+      <div class="mask-reveal">
+        <img src="images/gallery/residence-exterior-01.jpg" alt="Residence exterior visualization" data-parallax="0.12" loading="eager">
+      </div>
+      <figcaption>Residence 01 &middot; Exterior visualization</figcaption>
+    </figure>
   </div>
+  <div class="hero-scroll">Scroll <span>&darr;</span></div>
 </section>
+
+<!-- ==================== MARQUEE ==================== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Exterior <em>&middot;</em> Interior <em>&middot;</em> 2D Drafting <em>&middot;</em> 3D Visualization <em>&middot;</em> CAD <em>&middot;</em> Lumion Renders <em>&middot;</em> Walkthroughs <em>&middot;</em> </span>
+    <span>Exterior <em>&middot;</em> Interior <em>&middot;</em> 2D Drafting <em>&middot;</em> 3D Visualization <em>&middot;</em> CAD <em>&middot;</em> Lumion Renders <em>&middot;</em> Walkthroughs <em>&middot;</em> </span>
+  </div>
+</div>
 
 <!-- ==================== FEATURED WORKS ==================== -->
 <section>
@@ -66,21 +85,29 @@
       <a href="works.html" class="section-note" style="text-decoration:none;">View all projects &rarr;</a>
     </div>
 
-    <div class="featured-grid reveal">
-      <div class="work-card">
-        <div class="work-texture tex-lat"></div>
-        <div class="work-top"><span>ARCHITECTURAL THESIS</span><span>2021</span></div>
-        <div class="work-name">Ecotherapy Centre</div>
-        <div class="work-loc">Imphal East, Manipur &middot; 27 acres</div>
-        <p class="work-desc">A green-therapy campus connecting people with nature to heal mental and physical health — recreational and interactive spaces across a 27-acre site, drawn from case studies, site climate and a wood, bamboo and stone palette.</p>
-      </div>
-      <div class="work-card">
-        <div class="work-texture tex-bamboo"></div>
-        <div class="work-top"><span>DOCUMENTATION</span><span>2017</span></div>
-        <div class="work-name">Poa Mecca</div>
-        <div class="work-loc">Manipur, India</div>
-        <p class="work-desc">Architectural documentation study of the Poa Mecca site in Hajo, recording built form and historic context.</p>
-      </div>
+    <div class="feature-list">
+      <a class="feature-row reveal" href="gallery.html">
+        <div class="feature-media"><div class="mask-reveal"><img src="images/gallery/residence-exterior-04.jpg" alt="Residence exterior" data-parallax="0.08" loading="lazy"></div></div>
+        <div class="feature-body">
+          <div class="feature-index">01</div>
+          <div class="feature-top"><span>ARCHITECTURAL THESIS</span><span>2021</span></div>
+          <h3 class="feature-name">Ecotherapy Centre</h3>
+          <div class="feature-loc">Imphal East, Manipur &middot; 27 acres</div>
+          <p class="feature-desc">A green-therapy campus connecting people with nature to heal mental and physical health — recreational and interactive spaces across a 27-acre site, drawn from case studies, site climate and a wood, bamboo and stone palette.</p>
+          <span class="feature-cta">View project <span class="arrow">&rarr;</span></span>
+        </div>
+      </a>
+      <a class="feature-row feature-row--rev reveal" href="gallery.html">
+        <div class="feature-media"><div class="mask-reveal"><img src="images/gallery/residence-interior-living.jpg" alt="Interior visualization" data-parallax="0.08" loading="lazy"></div></div>
+        <div class="feature-body">
+          <div class="feature-index">02</div>
+          <div class="feature-top"><span>INTERIOR VISUALIZATION</span><span>2024</span></div>
+          <h3 class="feature-name">Residence Interiors</h3>
+          <div class="feature-loc">Manipur, India</div>
+          <p class="feature-desc">Room-by-room photoreal interiors — living, dining, kitchen and bedrooms — modelled and lit to test material, light and doubt long before construction begins.</p>
+          <span class="feature-cta">View project <span class="arrow">&rarr;</span></span>
+        </div>
+      </a>
     </div>
 
     <!-- Stats -->
@@ -102,6 +129,17 @@
         <div class="stat-label">Years of Study</div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ==================== SHOWCASE ==================== -->
+<section class="showcase">
+  <div class="showcase-media">
+    <img src="images/gallery/farmhouse-pool.jpg" alt="Farm house pool and courtyard visualization" data-parallax="0.18" loading="lazy">
+  </div>
+  <div class="wrap showcase-inner">
+    <p class="showcase-quote reveal">"A good drawing removes doubt. A good render removes it earlier."</p>
+    <div class="showcase-attr reveal">— Sweta Irom</div>
   </div>
 </section>
 
@@ -132,16 +170,6 @@
         <h3>Built for the next person</h3>
         <p>Every drawing set and model is organized and layered for the architect or contractor who picks it up next — clean files, not just a clean render.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ==================== TESTIMONIAL ==================== -->
-<section>
-  <div class="wrap">
-    <div class="testimonial-section reveal">
-      <p class="testimonial-quote">"A good drawing removes doubt. A good render removes it earlier."</p>
-      <div class="testimonial-attr">— Sweta Irom</div>
     </div>
   </div>
 </section>
