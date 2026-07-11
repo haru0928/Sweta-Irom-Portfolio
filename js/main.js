@@ -7,34 +7,10 @@
   'use strict';
 
   var root = document.documentElement;
-  var themeToggle = document.getElementById('themeToggle');
 
   /* --- Theme ------------------------------------------------ */
-  function applyTheme(theme) {
-    root.setAttribute('data-theme', theme);
-    if (themeToggle) {
-      themeToggle.textContent = theme === 'dark' ? 'LIGHT' : 'DARK';
-    }
-    try { localStorage.setItem('theme', theme); } catch (e) { /* private browsing */ }
-  }
-
-  var stored = null;
-  try { stored = localStorage.getItem('theme'); } catch (e) { /* private browsing */ }
-  var systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-  var currentTheme = stored || (systemPrefersLight ? 'light' : 'dark');
-  applyTheme(currentTheme);
-
-  window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', function (e) {
-    currentTheme = e.matches ? 'light' : 'dark';
-    applyTheme(currentTheme);
-  });
-
-  if (themeToggle) {
-    themeToggle.addEventListener('click', function () {
-      currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      applyTheme(currentTheme);
-    });
-  }
+  /* Dark theme only. */
+  root.setAttribute('data-theme', 'dark');
 
   /* --- Mobile Menu ------------------------------------------ */
   var menuToggle = document.getElementById('menuToggle');
@@ -82,10 +58,6 @@
     }
 
     function contourColors() {
-      var theme = root.getAttribute('data-theme');
-      if (theme === 'light') {
-        return ['rgba(139,67,26,0.30)', 'rgba(62,74,50,0.28)', 'rgba(33,30,23,0.14)'];
-      }
       return ['rgba(177,95,39,0.30)', 'rgba(92,112,72,0.28)', 'rgba(233,226,210,0.14)'];
     }
 
