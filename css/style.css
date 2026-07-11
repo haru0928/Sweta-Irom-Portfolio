@@ -38,18 +38,14 @@ html {
 }
 
 body {
-  background: var(--ink);
+  /* Subtle grey lift over the near-black base; component surfaces
+     still use --ink for depth. */
+  background: #201F22;
   color: var(--stone);
   font-family: var(--sans);
   font-weight: 300;
   overflow-x: hidden;
   transition: background 0.4s ease, color 0.4s ease;
-}
-
-/* Home page: subtle grey lift over the near-black base (component
-   surfaces still use --ink for depth). */
-body.home {
-  background: #201F22;
 }
 
 @media (prefers-reduced-motion: reduce) {
